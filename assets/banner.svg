@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913" />
+      <stop offset="50%" stop-color="#0d1127" />
+      <stop offset="100%" stop-color="#080718" />
+    </linearGradient>
+
+    <linearGradient id="glowPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.2" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="40%" stop-color="#c084fc" />
+      <stop offset="80%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="blurFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="60" result="blur" />
+    </filter>
+
+    <filter id="glowEffect">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- CSS Keyframe Animations -->
+    <style>
+      .orb-1 {
+        animation: floatOrb1 12s ease-in-out infinite alternate;
+      }
+      .orb-2 {
+        animation: floatOrb2 10s ease-in-out infinite alternate;
+      }
+      .orb-3 {
+        animation: floatOrb3 14s ease-in-out infinite alternate;
+      }
+      .wave-path {
+        stroke-dasharray: 800;
+        stroke-dashoffset: 800;
+        animation: drawLine 8s linear infinite alternate;
+      }
+      .wave-path-2 {
+        stroke-dasharray: 600;
+        stroke-dashoffset: 600;
+        animation: drawLine2 6s linear infinite alternate;
+      }
+      .pulse-pill {
+        animation: pillPulse 4s ease-in-out infinite alternate;
+      }
+      .rotate-slow {
+        transform-origin: 1050px 140px;
+        animation: slowRotate 24s linear infinite;
+      }
+      .star-blink {
+        animation: blink 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes floatOrb1 {
+        0% { transform: translate(0px, 0px) scale(1); }
+        100% { transform: translate(60px, 40px) scale(1.15); }
+      }
+      @keyframes floatOrb2 {
+        0% { transform: translate(0px, 0px) scale(1.1); }
+        100% { transform: translate(-50px, -30px) scale(0.9); }
+      }
+      @keyframes floatOrb3 {
+        0% { transform: translate(0px, 0px); }
+        100% { transform: translate(30px, -40px); }
+      }
+      @keyframes drawLine {
+        0% { stroke-dashoffset: 800; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes drawLine2 {
+        0% { stroke-dashoffset: 600; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes slowRotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes pillPulse {
+        0% { opacity: 0.85; transform: translateY(0); }
+        100% { opacity: 1; transform: translateY(-3px); }
+      }
+      @keyframes blink {
+        0% { opacity: 0.3; transform: scale(0.8); }
+        100% { opacity: 1; transform: scale(1.2); }
+      }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="420" fill="url(#bgGrad)" rx="16" />
+
+  <!-- Ambient Glowing Orbs in Background -->
+  <g filter="url(#blurFilter)">
+    <circle cx="180" cy="120" r="140" fill="#6366f1" opacity="0.35" class="orb-1" />
+    <circle cx="1020" cy="180" r="160" fill="#ec4899" opacity="0.3" class="orb-2" />
+    <circle cx="600" cy="360" r="180" fill="#06b6d4" opacity="0.25" class="orb-3" />
+  </g>
+
+  <!-- Subtle Futuristic Grid Pattern in Background -->
+  <g opacity="0.12" stroke="#6366f1" stroke-width="1">
+    <line x1="0" y1="70" x2="1200" y2="70" />
+    <line x1="0" y1="140" x2="1200" y2="140" />
+    <line x1="0" y1="210" x2="1200" y2="210" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="0" y1="350" x2="1200" y2="350" />
+    <line x1="150" y1="0" x2="150" y2="420" />
+    <line x1="300" y1="0" x2="300" y2="420" />
+    <line x1="450" y1="0" x2="450" y2="420" />
+    <line x1="600" y1="0" x2="600" y2="420" />
+    <line x1="750" y1="0" x2="750" y2="420" />
+    <line x1="900" y1="0" x2="900" y2="420" />
+    <line x1="1050" y1="0" x2="1050" y2="420" />
+  </g>
+
+  <!-- Ambient Animated Wave Ribbons (strictly background/edges, never covering central text) -->
+  <g opacity="0.4">
+    <path class="wave-path" d="M -50,330 C 250,220 400,390 750,280 C 950,220 1100,340 1250,270" fill="none" stroke="url(#textGrad)" stroke-width="3" filter="url(#glowEffect)" />
+    <path class="wave-path-2" d="M -50,370 C 300,310 500,410 850,320 C 1050,260 1150,360 1250,330" fill="none" stroke="url(#cyanGrad)" stroke-width="2" />
+  </g>
+
+  <!-- Decorative Orbiting Tech Element in Far Right Corner -->
+  <g class="rotate-slow" opacity="0.45">
+    <circle cx="1050" cy="140" r="65" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="6,8" />
+    <circle cx="1050" cy="140" r="90" fill="none" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="12,14" />
+    <circle cx="1115" cy="140" r="6" fill="#38bdf8" />
+    <circle cx="985" cy="140" r="5" fill="#f43f5e" />
+    <circle cx="1050" cy="50" r="7" fill="#a855f7" />
+  </g>
+
+  <!-- Shimmering Sparkles (Safe margins) -->
+  <g class="star-blink" opacity="0.7">
+    <circle cx="140" cy="65" r="2.5" fill="#ffffff" />
+    <circle cx="210" cy="270" r="3" fill="#38bdf8" />
+    <circle cx="980" cy="75" r="3" fill="#f472b6" />
+    <circle cx="890" cy="270" r="2.5" fill="#c084fc" />
+  </g>
+
+  <!-- FOREGROUND CONTENT: Header Category Tag -->
+  <g transform="translate(600, 75)">
+    <rect x="-190" y="-18" width="380" height="36" rx="18" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5" opacity="0.9" />
+    <circle cx="-160" cy="0" r="5" fill="#10b981" />
+    <text x="0" y="5" fill="#e0e7ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle">
+      CURATED ECOSYSTEM DIRECTORY
+    </text>
+  </g>
+
+  <!-- FOREGROUND MAIN TITLE: Crisp, Unobstructed, Centered -->
+  <g transform="translate(600, 155)">
+    <text x="0" y="0" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Roboto, sans-serif" font-size="52" font-weight="900" letter-spacing="-1.5" fill="url(#textGrad)" filter="url(#glowEffect)">
+      Awesome AI Animation
+    </text>
+    <text x="0" y="52" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Roboto, sans-serif" font-size="34" font-weight="800" letter-spacing="-0.5" fill="#f8fafc">
+      &amp; Motion Graphics
+    </text>
+  </g>
+
+  <!-- FOREGROUND SUBTITLE: High Contrast & Perfectly Readable -->
+  <g transform="translate(600, 252)">
+    <text x="0" y="0" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="500" fill="#cbd5e1" letter-spacing="0.2">
+      Foundation Video Diffusion • Character Pose Transfer • ComfyUI Pipelines • Programmatic Motion
+    </text>
+  </g>
+
+  <!-- FOREGROUND FEATURE PILLS: Elegant Cards in Lower Area -->
+  <g transform="translate(600, 318)" class="pulse-pill">
+    <!-- Pill 1: Video DiT Models -->
+    <g transform="translate(-360, 0)">
+      <rect x="-95" y="-16" width="190" height="32" rx="16" fill="#111827" stroke="#3b82f6" stroke-width="1.2" opacity="0.95" />
+      <text x="0" y="5" fill="#93c5fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
+        🎬 Video Diffusion DiT
+      </text>
+    </g>
+
+    <!-- Pill 2: Pose & Motion Transfer -->
+    <g transform="translate(-120, 0)">
+      <rect x="-95" y="-16" width="190" height="32" rx="16" fill="#111827" stroke="#a855f7" stroke-width="1.2" opacity="0.95" />
+      <text x="0" y="5" fill="#d8b4fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
+        💃 Motion &amp; Pose Transfer
+      </text>
+    </g>
+
+    <!-- Pill 3: ComfyUI & Local VFX -->
+    <g transform="translate(120, 0)">
+      <rect x="-95" y="-16" width="190" height="32" rx="16" fill="#111827" stroke="#ec4899" stroke-width="1.2" opacity="0.95" />
+      <text x="0" y="5" fill="#fbcfe8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
+        ⚡ ComfyUI Workflows
+      </text>
+    </g>
+
+    <!-- Pill 4: Code-Driven Motion -->
+    <g transform="translate(360, 0)">
+      <rect x="-95" y="-16" width="190" height="32" rx="16" fill="#111827" stroke="#10b981" stroke-width="1.2" opacity="0.95" />
+      <text x="0" y="5" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
+        📐 Code-Driven Motion
+      </text>
+    </g>
+  </g>
+
+  <!-- Modern Corner Accent Frame -->
+  <path d="M 24,60 L 24,24 L 60,24" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 1176,60 L 1176,24 L 1140,24" fill="none" stroke="#ec4899" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 24,360 L 24,396 L 60,396" fill="none" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 1176,360 L 1176,396 L 1140,396" fill="none" stroke="#a855f7" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+</svg>
