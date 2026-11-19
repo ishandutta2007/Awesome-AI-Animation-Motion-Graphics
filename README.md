@@ -10,7 +10,7 @@
 
 <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
 <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-<a href="https://github.com/ishandutta2007/Awesome-AI-Animation-Motion-Graphics/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-AI-Animation-Motion-Graphics?style=social" alt="GitHub stars" /></a>
+<a href="https://github.com/ishandutta2007/Awesome-AI-Animation-Motion-Graphics/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-AI-Animation-Motion-Graphics?style=social" alt="GitHub_Stars" /></a>
 <a href="https://github.com/ishandutta2007/Awesome-AI-Animation-Motion-Graphics/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-AI-Animation-Motion-Graphics?style=social" alt="GitHub forks" /></a>
 <a href="https://github.com/ishandutta2007/Awesome-AI-Animation-Motion-Graphics/issues"><img src="https://img.shields.io/github/issues/ishandutta2007/Awesome-AI-Animation-Motion-Graphics?style=flat-square&color=blue" alt="GitHub issues" /></a>
 <a href="https://github.com/ishandutta2007/Awesome-AI-Animation-Motion-Graphics/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-AI-Animation-Motion-Graphics?style=flat-square&color=green" alt="License" /></a>
@@ -73,7 +73,7 @@ The table below lists top hosted platforms for generative video and character an
 
 The table below catalogs open-source repositories across foundation video generation, character retargeting, ComfyUI nodes, programmatic motion tools, and frame interpolation, sorted by GitHub stargazers (descending):
 
-| Project | GitHub Stars | Primary Domain / Focus | Key Features |
+| Project | GitHub_Stars | Primary Domain / Focus | Key Features |
 | :--- | :--- | :--- | :--- |
 | **[Remotion](https://github.com/remotion-dev/remotion)** | [![Stars](https://img.shields.io/github/stars/remotion-dev/remotion?style=social&color=white)](https://github.com/remotion-dev/remotion/stargazers) | Programmatic Motion Graphics | Create frame-accurate MP4 animations and videos programmatically using React, TypeScript, CSS, WebGL, and SVG canvas. |
 | **[Manim](https://github.com/ManimCommunity/manim)** | [![Stars](https://img.shields.io/github/stars/ManimCommunity/manim?style=social&color=white)](https://github.com/ManimCommunity/manim/stargazers) | Mathematical &amp; Vector Animation | Community-maintained Python animation engine for algorithmic vector motion graphics, educational explainers, and math graphics. |
@@ -134,7 +134,7 @@ Contributions are welcome and highly encouraged! To add or update a project or p
 2. Create your feature branch (`git checkout -b feature/add-new-animation-model`).
 3. Follow the established formatting conventions:
    - For SaaS products: Provide specific starting prices, accurate free tier limits, and verifiable revenue/valuation metrics.
-   - For open-source repos: Include the repository star badge linked to its `/stargazers` page.
+   - For open-source repos: Include the repository Stars_Badge linked to its `/stargazers` page.
 4. **Commit** your changes (`git commit -m 'feat: Add New-Video-Model to open source list'`).
 5. **Push** to the branch (`git push origin feature/add-new-animation-model`).
 6. Open a **Pull Request** detailing why the tool should be included.
